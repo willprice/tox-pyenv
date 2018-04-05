@@ -13,6 +13,4 @@ jobs:
       - run: pip -V
       - run: pip install -U pip
       - run: pip install -U tox
-      - run: pip install -U .
-      - run: pyenv local $TOX_PY27 $TOX_PY35 $TOX_PY36
       - run: tox -v --recreate
