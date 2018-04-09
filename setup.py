@@ -18,7 +18,9 @@ with open(os.path.join(here, 'tox_pyenv.py'), 'r') as abt:
 if any(k in ' '.join(sys.argv).lower() for k in ['upload', 'dist']):
     try:
         current_commit = subprocess.check_output(
-            ['git', 'rev-parse', 'HEAD']).strip()
+            ['git', 'rev-parse', 'HEAD'],
+            universal_newlines=True,
+        ).strip()
     except (OSError, subprocess.CalledProcessError):
         pass
     else:
